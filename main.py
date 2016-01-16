@@ -13,52 +13,66 @@ def preveriLasje(zapis):
     rjava = "GCCAGTGCCG"
     korencek = "TTAGCTATCGC"
     if zapis.find(crna) != -1:
-        return "crno barvo las";
+        return "crno barvo las"
     elif zapis.find(rjava) != -1:
-        return "rjavo barvo las";
+        return "rjavo barvo las"
     elif zapis.find(korencek) != -1:
-        return "oranzno barvo las";
+        return "oranzno barvo las"
+    else:
+        return "neznano barvo las"
 
 def preveriObraz(zapis):
     kvadraten =  "GCCACGG"
     okrogel =  "ACCACAA"
     ovalen = "AGGCCTCA"
     if zapis.find(kvadraten) != -1:
-        return "kvadratast obraz";
+        return "kvadratast obraz"
     elif zapis.find(okrogel) != -1:
-        return "okrogel obraz";
+        return "okrogel obraz"
     elif zapis.find(ovalen) != -1:
-        return "ovalen obbraz";
+        return "ovalen obraz"
+    else:
+        return "neznano obliko obraza"
+
 
 def preveriOci(zapis):
     modraOci = "TTGTGGTGGC"
     zelenaOci = "GGGAGGTGGC"
     rjavaOci = "AAGTAGTGAC"
     if zapis.find(modraOci) != -1:
-        return "modre oci";
+        return "modre oci"
     elif zapis.find(zelenaOci) != -1:
-        return "zelene oci";
+        return "zelene oci"
     elif zapis.find(rjavaOci) != -1:
-        return "rjave oci";
+        return "rjave oci"
+    else:
+        return "neznano barvo oci"
+
 
 def preveriSpol(zapis):
     moski = "TGCAGGAACTTC"
     zenska = "TGAAGGACCTTC"
     if zapis.find(moski) != -1:
-        return "je moski";
+        return "je moski"
     elif zapis.find(zenska) != -1:
-        return "je zenska";
+        return "je zenska"
+    else:
+        return "je neznanega spola"
+
 
 def preveriRaso(zapis):
     belec = "AAAACCTCA"
     crnec = "CGACTACAG"
     azijec = "CGCGGGCCG"
     if zapis.find(belec) != -1:
-        return "je belec";
+        return "je belec"
     elif zapis.find(crnec) != -1:
-        return "je crnc";
+        return "je crnc"
     elif zapis.find(azijec) != -1:
-        return "je azijec";
+        return "je azijec"
+    else:
+        return "je neznane rase"
+
 
 
 
@@ -87,6 +101,7 @@ class MainHandler(BaseHandler):
         return self.render_template("forenzika.html")
     def post(self):
         zapis = self.request.get("vnosnoPolje")
+        zapis = zapis.strip(' ')
         barvaLas = preveriLasje(zapis)
         obraz = preveriObraz(zapis)
         oci = preveriOci(zapis)
