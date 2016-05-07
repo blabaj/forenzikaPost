@@ -1,10 +1,5 @@
-# About
+SMARTNINJA PROJEKT
 
-Basic GAE project with Jinja templating engine
+http://forenzicna.appspot.com/
 
-# Usage
-
-1. Click on Download ZIP
-2. Save on your disk and unzip
-3. Change the application ID in app.yaml
-4. Build something nice ;)
+Preporsta spletna aplikacija za prepoznavanje DNK zapisa
